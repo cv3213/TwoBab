@@ -2,6 +2,6 @@
 
 import { AppRegistry } from "react-native";
 import { name as appName } from "./app.json";
-import App from "App.js";
+import App from "./App.js";
 
-AppRegistry.registerComponent(appName, () => mainNavigator);
+AppRegistry.registerComponent(appName, () => App);

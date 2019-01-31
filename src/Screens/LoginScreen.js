@@ -66,30 +66,7 @@ export default class LoginScreen extends Component {
     );
   }
   UserLoginFunction = () => {
-    const { id, pw } = this.state;
-
-    fetch("http://192.168.43.24/register.php", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        id: id,
-        pw: pw
-      })
-    })
-      .then(response => response.json())
-      .then(responseJson => {
-        if (responseJson === "로그인에 성공하였습니다.") {
-          this.props.navigation.navigate("Home", { isLogin: true });
-        } else {
-          Alert.alert(responseJson);
-        }
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    this.props.navigation.navigate("Home");
   };
   setFocusID(hasfocus) {
     this.setState({ focusID: hasfocus });

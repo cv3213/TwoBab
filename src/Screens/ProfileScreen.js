@@ -87,38 +87,6 @@ export default class ProfileScreen extends Component {
             />
           </TouchableOpacity>
         </View>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <TouchableOpacity style={{ marginRight: 50 }}>
-            <Image
-              source={this.state.imageProfile}
-              style={{ width: 40, height: 40 }}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={{ marginLeft: 50, marginRight: 50 }}
-            onPress={() => {
-              navigate("Home");
-            }}
-          >
-            <Image
-              source={this.state.imageHome}
-              style={{ width: 40, height: 40 }}
-            />
-          </TouchableOpacity>
-          <TouchableOpacity style={{ marginLeft: 50 }}>
-            <Image
-              source={this.state.imageSetting}
-              style={{ width: 40, height: 40 }}
-            />
-          </TouchableOpacity>
-        </View>
       </View>
     );
   }

@@ -8,9 +8,6 @@ import {
   StyleSheet
 } from "react-native";
 import ImageSlider from "react-native-image-slider";
-import { TabView, TabBar, SceneMap } from "react-native-tab-view";
-import ProfileScreen from "./ProfileScreen";
-import SettingScreen from "./SettingScreen";
 
 const { width, height } = Dimensions.get("window");
 export default class HomeScreen extends Component {
@@ -22,12 +19,7 @@ export default class HomeScreen extends Component {
     imageProfile: require("../Images/profileIcon.png"),
     imageHome: require("../Images/homeIcon.png"),
     imageSetting: require("../Images/settingIcon.png"),
-    isLogin: false,
-    index: 1,
-    routes: [
-      { key: "Profile", title: "profile" },
-      { key: "Setting", title: "Setting" }
-    ]
+    isLogin: false
   };
   static navigationOptions = {
     headerTitle: (
@@ -38,9 +30,6 @@ export default class HomeScreen extends Component {
     )
   };
   logout() {}
-  renderTabBar = () => {
-    <TabBar {...this.props} />;
-  };
   render() {
     const images = [
       "https://placeimg.com/640/640/nature",
@@ -111,18 +100,6 @@ export default class HomeScreen extends Component {
             <Text style={{ fontSize: 16, fontWeight: "400" }}>공지사항</Text>
           </TouchableOpacity>
         </View>
-
-        <TabView
-          style={{ backgroundColor: "#FFF" }}
-          navigationState={this.state}
-          renderScene={SceneMap({
-            Profile: ProfileScreen,
-            Setting: SettingScreen
-          })}
-          onIndexChange={index => this.setState({ index })}
-          initialLayout={{ width: width, height: height }}
-          renderTabBar={this.renderTabBar}
-        />
       </View>
     );
   }

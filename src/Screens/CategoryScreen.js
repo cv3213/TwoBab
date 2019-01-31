@@ -17,7 +17,7 @@ const categoryKorea = () => <View />;
 const categoryChina = () => <View />;
 const categoryEurope = () => <View />;
 const categoryJapan = () => <View />;
-export default class Category extends Component {
+export default class CategoryScreen extends Component {
   static navigationOptions = {
     headerTintColor: "#FFB300",
     headerTitle: "음식 카테고리",
