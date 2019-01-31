@@ -13,7 +13,7 @@ import {
 } from "react-native";
 import { Dropdown } from "react-native-material-dropdown";
 import CheckBox from "react-native-check-box";
-import DialogShow from "./DialogShow";
+import DialogShow from "../components/DialogShow";
 
 const { width, height } = Dimensions.get("window");
 export default class RegisterScreen extends Component {

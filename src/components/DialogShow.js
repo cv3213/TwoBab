@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   View,
   Text,
   ScrollView,
   Dimensions,
   StyleSheet,
-  TouchableOpacity,
-} from 'react-native';
+  TouchableOpacity
+} from "react-native";
 import Dialog, {
   SlideAnimation,
-  DialogContent,
-} from 'react-native-popup-dialog';
+  DialogContent
+} from "react-native-popup-dialog";
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 export default class DialogShow extends Component {
   state = {
-    visible: true,
+    visible: true
   };
 
   render() {
@@ -24,31 +24,35 @@ export default class DialogShow extends Component {
         visible={this.state.visible}
         dialogAnimation={
           new SlideAnimation({
-            slideFrom: 'bottom',
+            slideFrom: "bottom"
           })
-        }>
+        }
+      >
         <DialogContent
           style={{
             borderWidth: 2,
-            borderColor: '#FFB300',
+            borderColor: "#FFB300",
             width: width - 50,
-            height: height - 100,
-          }}>
+            height: height - 100
+          }}
+        >
           <Text
             style={{
-              color: '#FFB300',
+              color: "#FFB300",
               borderRadius: 5,
               borderWidth: 2,
-              borderColor: '#FFB300',
-            }}>
+              borderColor: "#FFB300"
+            }}
+          >
             개인정보 수집, 이용 및 제 3자 제공 동의 안내
           </Text>
           <ScrollView
             style={{
               borderRadius: 10,
               borderWidth: 2,
-              borderColor: '#FFB300',
-            }}>
+              borderColor: "#FFB300"
+            }}
+          >
             <Text>
               개인정보보호법 등 관련 법규에 의거하여 두밥 서비스는 가입자의
               개인정보 수집 및 활용에 대해 개인정보 수집 및 활용 동의를 받고
@@ -72,36 +76,39 @@ export default class DialogShow extends Component {
           <View
             style={{
               flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}>
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
             <TouchableOpacity
               style={{
                 flex: 1,
                 borderRadius: 10,
                 borderWidth: 2,
-                borderColor: '#FFB300',
-                justifyContent: 'center',
+                borderColor: "#FFB300",
+                justifyContent: "center"
               }}
               onPress={() => {
                 this.setState({ visible: false });
-              }}>
-              <Text style={{ textAlign: 'center' }}>동의</Text>
+              }}
+            >
+              <Text style={{ textAlign: "center" }}>동의</Text>
             </TouchableOpacity>
             <TouchableOpacity
               style={{
                 flex: 1,
                 borderRadius: 10,
                 borderWidth: 2,
-                borderColor: '#FFB300',
-                justifyContent: 'center',
+                borderColor: "#FFB300",
+                justifyContent: "center"
               }}
               onPress={() => {
                 this.setState({ visible: false });
                 this.props.navigation.goBack();
-              }}>
-              <Text style={{ textAlign: 'center' }}>거부</Text>
+              }}
+            >
+              <Text style={{ textAlign: "center" }}>거부</Text>
             </TouchableOpacity>
           </View>
         </DialogContent>

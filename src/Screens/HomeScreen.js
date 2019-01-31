@@ -9,6 +9,8 @@ import {
 } from "react-native";
 import ImageSlider from "react-native-image-slider";
 import { TabView, TabBar, SceneMap } from "react-native-tab-view";
+import ProfileScreen from "./ProfileScreen";
+import SettingScreen from "./SettingScreen";
 
 const { width, height } = Dimensions.get("window");
 export default class HomeScreen extends Component {
@@ -22,9 +24,9 @@ export default class HomeScreen extends Component {
     imageSetting: require("../Images/settingIcon.png"),
     isLogin: false,
     index: 1,
-    route: [
-      { key: "profile", title: this.state.imageProfile },
-      { key: "setting", title: this.state.imageSetting }
+    routes: [
+      { key: "Profile", title: "profile" },
+      { key: "Setting", title: "Setting" }
     ]
   };
   static navigationOptions = {
@@ -37,7 +39,7 @@ export default class HomeScreen extends Component {
   };
   logout() {}
   renderTabBar = () => {
-    <TabBar {...props} />;
+    <TabBar {...this.props} />;
   };
   render() {
     const images = [
@@ -114,8 +116,8 @@ export default class HomeScreen extends Component {
           style={{ backgroundColor: "#FFF" }}
           navigationState={this.state}
           renderScene={SceneMap({
-            Profile: profile,
-            Setting: setting
+            Profile: ProfileScreen,
+            Setting: SettingScreen
           })}
           onIndexChange={index => this.setState({ index })}
           initialLayout={{ width: width, height: height }}

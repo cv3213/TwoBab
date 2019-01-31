@@ -1,18 +1,26 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation';
-import HomeScreen from './components/HomeScreen';
-import CategoryScreen from './components/CategoryScreen';
-import LoginScreen from './components/LoginScreen';
-import RegisterScreen from './components/RegisterScreen';
-import ProfileScreen from './components/ProfileScreen';
+import {
+  createStackNavigator,
+  createAppContainer,
+  createSwitchNavigator
+} from "react-navigation";
+import HomeScreen from "../components/Screens/HomeScreen";
+import CategoryScreen from "../components/Screens/CategoryScreen";
+import LoginScreen from "../components/Screens/LoginScreen";
+import RegisterScreen from "../components/Screens/RegisterScreen";
+import ProfileScreen from "../components/Screens/ProfileScreen";
+import React, { Component } from "react";
 
-const mainNavigator = createStackNavigator({
+export default class App extends Component {
+  render() {
+    return <mainNavigator />;
+  }
+}
+
+const stackNav = createStackNavigator({
   Home: { screen: HomeScreen },
   Category: { screen: CategoryScreen },
   Login: { screen: LoginScreen },
-  Register: { screen: RegisterScreen },
-  Profile: { screen: ProfileScreen },
+  Register: { screen: RegisterScreen }
 });
-
-const App = createAppContainer(mainNavigator);
-
-export default App;
+const switchNav = createSwitchNavigator({});
+const mainNavigator = createAppContainer(Navigator);
